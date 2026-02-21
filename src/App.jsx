@@ -292,6 +292,27 @@ const DATABASE_SOURCE = [
     matchScore: 60,
     verificationNote: "✓ VERIFIED: Meltwater Foundation (MEST) confirmed active with entrepreneurship programs across Africa. Training programs confirmed via official portal."
   },
+  {
+    id: 802,
+    title: "CANEX Creative Africa Nexus Deal Room",
+    source: "Afreximbank - CANEX",
+    country: "Pan-African",
+    type: "Investment & Opportunity Platform",
+    status: "Open",
+    sector: "Creative Economy",
+    category: "B2B Partnership",
+    value: "Variable (Deal Room Access + Investment Connections)",
+    deadline: "Rolling / Ongoing",
+    description: "CANEX is Afreximbank's Creative Africa Nexus—a digital platform connecting African creatives with investors, collaborators, and market opportunities. The platform offers Create, Learn, and Earn modules with active deal room activity, investment connections, and film fund opportunities.",
+    eligibility: "Creative professionals, studios, production companies, and tech entrepreneurs across Africa.",
+    strategicFit: "PERFECT FIT FOR ALX: CANEX deal room offers direct pathways for ALX graduates to connect with investors and production opportunities. ALX can position as a training partner providing talent pipeline for CANEX ecosystem.",
+    portalUrl: "https://canex.africa/",
+    requirements: ["Portfolio/Showreel", "Project Proposal", "Beta Access Application"],
+    businessAction: ["Contact CANEX leadership to establish ALX graduate pipeline partnership.", "Explore training provider role for CANEX creative bootcamps.", "Negotiate preferential access for ALX cohorts."],
+    tags: ["Platform", "Investment", "Pan-African", "Deal Room", "Ecosystem"],
+    matchScore: 99,
+    verificationNote: "✓ VERIFIED: CANEX platform confirmed active with deal room, investment connections, film fund, and beta access signup. Afreximbank backing ensures institutional stability. Real-time opportunities through CANEX@IATF2025 and CANEX WKND events."
+  },
 
   // =========================================================================
   // TIER 1 EXT: STRATEGIC HIGH-VALUE PARTNERSHIP PLAYS
