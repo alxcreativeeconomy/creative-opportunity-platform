@@ -65,8 +65,8 @@ export const VERIFICATION_REGISTRY = {
   nfvf_funding_2026: {
     verificationLevel: "VERIFIED", verifiedDate: "March 2026",
     evidence: "NFVF 2026/27 schedule active. Micro-budget and Marketing cycles live.",
-    directOpportunityUrl: "https://www.nfvf.co.za/funding/", directOpportunityLabel: "NFVF Portal",
-    verifiedBy: "nfvf.co.za", sourceArticles: [{ title: "NFVF Schedule", url: "https://www.nfvf.co.za/funding-schedule/" }]
+    directOpportunityUrl: "https://www.nfvf.co.za/nfvf-call-for-submission-for-training-provider-grant-2026/", directOpportunityLabel: "NFVF Portal",
+    verifiedBy: "nfvf.co.za", sourceArticles: [{ title: "NFVF Schedule", url: "https://www.nfvf.co.za/funding-cycles-2019-20/" }]
   },
   nac_sa_2026: {
     verificationLevel: "VERIFIED", verifiedDate: "March 2026",

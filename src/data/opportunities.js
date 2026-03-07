@@ -18,7 +18,7 @@ export const DATABASE_SOURCE = [
     description: "Comprehensive support for script development, production, and marketing in South Africa.",
     eligibility: "South African filmmakers and companies.",
     strategicFit: "FILM CORE: Essential body for ALX SA film graduates.",
-    portalUrl: "https://www.nfvf.co.za/funding-schedule/", requirements: ["Script", "Budget", "BEE Compliance"],
+    portalUrl: "https://www.nfvf.co.za/nfvf-call-for-submission-for-training-provider-grant-2026/", requirements: ["Script", "Budget", "BEE Compliance"],
     businessAction: ["Pipeline graduating film cohorts for NFVF cycles."],
     tags: ["South Africa", "NFVF", "Film", "Grant"], matchScore: 100
   },
