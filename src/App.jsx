@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Menu, Bell, UserCircle } from 'lucide-react';
 import { DATABASE_SOURCE, REGION_TABS } from './data/opportunities';
 import { getVerificationData } from './data/registry';
 import Sidebar from './components/Sidebar';
@@ -20,11 +20,19 @@ const App = () => {
   
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
-  const [showClosed, setShowClosed] = useState(false);
   const [verificationFilter, setVerificationFilter] = useState('All');
 
   useEffect(() => {
-    // Simulate data loading
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setIsSidebarOpen(true);
+      else setIsSidebarOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       const sorted = [...DATABASE_SOURCE].sort((a, b) => b.matchScore - a.matchScore);
       setOpportunities(sorted);
@@ -36,7 +44,6 @@ const App = () => {
 
   const filteredOpportunities = opportunities.filter(op => {
     if (op.region !== activeRegion) return false;
-    if (showClosed) return op.status === 'Closed';
     if (op.status === 'Closed') return false;
     if (selectedSector !== 'All' && op.sector !== selectedSector) return false;
     if (selectedLocation !== 'All Locations' && op.country && !op.country.includes(selectedLocation)) return false;
@@ -56,12 +63,8 @@ const App = () => {
     setActiveTab('search');
   };
 
-  const handleBackToMatrix = () => {
-    setSelectedOpportunity(null);
-  };
-
   return (
-    <div className="flex h-screen bg-slate-50 text-slate-900 font-sans overflow-hidden">
+    <div className="flex h-screen bg-[#F8FAFC] text-slate-900 font-sans overflow-hidden">
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
@@ -69,59 +72,96 @@ const App = () => {
         setIsSidebarOpen={setIsSidebarOpen} 
       />
 
-      <main className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
-        <header className="h-20 bg-white/60 backdrop-blur-xl border-b border-slate-200 flex items-center justify-between px-8 z-20">
-          <h1 className="text-2xl font-extrabold text-slate-800 tracking-tight">
-            {activeTab === 'dashboard' && 'Executive Intelligence Overview'}
-            {activeTab === 'search' && !selectedOpportunity && 'Strategic Opportunity Matrix'}
-            {activeTab === 'search' && selectedOpportunity && 'Verification Report'}
-          </h1>
-          {lastUpdated && (
-             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-               Last Updated: {lastUpdated}
-             </p>
-          )}
+      <main className="flex-1 flex flex-col h-full overflow-hidden relative z-10 w-full">
+        {/* Executive Glass Header */}
+        <header className="h-20 bg-white/80 backdrop-blur-md border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 z-20 sticky top-0">
+          <div className="flex items-center gap-6">
+            <button 
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="p-2.5 text-slate-500 hover:bg-slate-100 hover:text-emerald-600 rounded-xl transition-all"
+            >
+              <Menu size={22}/>
+            </button>
+            <div className="h-8 w-[1px] bg-slate-200 hidden md:block"></div>
+            <div>
+              <h1 className="text-xl lg:text-2xl font-black text-slate-800 tracking-tight">
+                {activeTab === 'dashboard' && 'Executive Overview'}
+                {activeTab === 'search' && !selectedOpportunity && 'Opportunity Matrix'}
+                {activeTab === 'search' && selectedOpportunity && 'Verification Intelligence'}
+              </h1>
+              <p className="hidden md:block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-0.5">
+                ALX Creative Economy Operational Node
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 lg:gap-6">
+            <div className="hidden xl:flex flex-col items-end">
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">System Health</p>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+                <span className="text-xs font-bold text-slate-600">Sync Active: {lastUpdated}</span>
+              </div>
+            </div>
+            <div className="h-8 w-[1px] bg-slate-200 hidden md:block"></div>
+            <button className="p-2.5 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition-all relative">
+              <Bell size={20} />
+              <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-rose-500 rounded-full border-2 border-white"></span>
+            </button>
+            <button className="flex items-center gap-3 p-1.5 pr-4 bg-slate-100 hover:bg-slate-200 rounded-full transition-all group">
+              <UserCircle size={32} className="text-slate-400 group-hover:text-emerald-600" />
+              <span className="text-xs font-black text-slate-700 hidden lg:block">OPS BOSS</span>
+            </button>
+          </div>
         </header>
 
-        <div className="flex-1 overflow-y-auto p-8 scrollbar-hide">
-          {isLoading ? (
-            <div className="flex flex-col items-center justify-center h-full space-y-4">
-              <Loader2 className="animate-spin text-emerald-600" size={48} />
-              <p className="text-slate-400 font-bold uppercase tracking-widest animate-pulse">Synchronizing Intelligence...</p>
-            </div>
-          ) : (
-            <>
-              {activeTab === 'dashboard' && <Dashboard onSelectDeal={handleSelectOpportunity} />}
+        {/* Content Area with Desktop Constraints */}
+        <div className="flex-1 overflow-y-auto scrollbar-hide">
+          <div className="max-w-[1600px] mx-auto p-6 lg:p-10">
+            {isLoading ? (
+              <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-6">
+                <div className="relative">
+                  <Loader2 className="animate-spin text-emerald-600" size={60} />
+                  <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-full"></div>
+                </div>
+                <p className="text-slate-400 font-black uppercase tracking-[0.3em] animate-pulse text-xs">Calibrating Intelligence Streams...</p>
+              </div>
+            ) : (
+              <>
+                {activeTab === 'dashboard' && <Dashboard onSelectDeal={handleSelectOpportunity} />}
 
-              {activeTab === 'search' && !selectedOpportunity && (
-                <>
-                  <FilterBar 
-                    searchQuery={searchQuery}
-                    setSearchQuery={setSearchQuery}
-                    selectedSector={selectedSector}
-                    setSelectedSector={setSelectedSector}
-                    selectedLocation={selectedLocation}
-                    setSelectedLocation={setSelectedLocation}
-                    verificationFilter={verificationFilter}
-                    setVerificationFilter={setVerificationFilter}
-                    activeRegion={activeRegion}
-                    setActiveRegion={setActiveRegion}
-                  />
-                  <OpportunityMatrix 
-                    opportunities={filteredOpportunities} 
-                    onSelectOpportunity={handleSelectOpportunity} 
-                  />
-                </>
-              )}
+                {activeTab === 'search' && !selectedOpportunity && (
+                  <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    <FilterBar 
+                      searchQuery={searchQuery}
+                      setSearchQuery={setSearchQuery}
+                      selectedSector={selectedSector}
+                      setSelectedSector={setSelectedSector}
+                      selectedLocation={selectedLocation}
+                      setSelectedLocation={setSelectedLocation}
+                      verificationFilter={verificationFilter}
+                      setVerificationFilter={setVerificationFilter}
+                      activeRegion={activeRegion}
+                      setActiveRegion={setActiveRegion}
+                    />
+                    <OpportunityMatrix 
+                      opportunities={filteredOpportunities} 
+                      onSelectOpportunity={handleSelectOpportunity} 
+                    />
+                  </div>
+                )}
 
-              {activeTab === 'search' && selectedOpportunity && (
-                <VerificationReport 
-                  op={selectedOpportunity} 
-                  onBack={handleBackToMatrix} 
-                />
-              )}
-            </>
-          )}
+                {activeTab === 'search' && selectedOpportunity && (
+                  <div className="animate-in zoom-in-95 fade-in duration-500">
+                    <VerificationReport 
+                      op={selectedOpportunity} 
+                      onBack={() => setSelectedOpportunity(null)} 
+                    />
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </main>
     </div>

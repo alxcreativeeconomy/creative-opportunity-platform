@@ -20,9 +20,9 @@
 ## 🌍 Africa Region Matrix (Expanded)
 
 ### **South Africa**
-*   **Mzansi Golden Economy (MGE):** **LEGIT.** Flagship large-scale CCIP and Touring grants. Status: **Rolling / Periodic**.
-*   **NFVF:** Comprehensive film production/development. Status: **Active Cycles**.
-*   **National Arts Council (NAC):** Annual project funding across all arts. Status: **Open**.
+*   **Mzansi Golden Economy (MGE):** Flagship large-scale CCIP and Touring grants. Status: **Rolling / Periodic**.
+*   **NFVF:** Comprehensive film production/development. Status: **Active Cycles**. Deadline: **March 9, 2026** (Training).
+*   **National Arts Council (NAC):** Annual project funding across all arts. Status: **Open**. Deadline: **March 13, 2026**.
 *   **SABC Commissioning:** Broadcast content procurement. Status: **Ongoing**.
 
 ### **Nigeria, Kenya & Ethiopia**

@@ -14,11 +14,11 @@ export const DATABASE_SOURCE = [
   {
     id: 'nfvf_funding_2026', title: "NFVF: 2026/27 Comprehensive Film Funding", source: "NFVF South Africa", country: "South Africa", region: "Africa",
     type: "Production & Development Grant", status: "Open", sector: "Film & TV", category: "Institutional",
-    value: "R200k - R6M per project", deadline: "Rolling Cycles",
+    value: "R200k - R6M per project", deadline: "March 9, 2026", isExpiring: true,
     description: "Comprehensive support for script development, production, and marketing in South Africa.",
     eligibility: "South African filmmakers and companies.",
     strategicFit: "FILM CORE: Essential body for ALX SA film graduates.",
-    portalUrl: "https://www.nfvf.co.za/funding/", requirements: ["Script", "Budget", "BEE Compliance"],
+    portalUrl: "https://www.nfvf.co.za/funding-schedule/", requirements: ["Script", "Budget", "BEE Compliance"],
     businessAction: ["Pipeline graduating film cohorts for NFVF cycles."],
     tags: ["South Africa", "NFVF", "Film", "Grant"], matchScore: 100
   },
