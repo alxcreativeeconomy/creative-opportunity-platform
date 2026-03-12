@@ -85,8 +85,8 @@ export const VERIFICATION_REGISTRY = {
   rwanda_film_office_grants: {
     verificationLevel: "VERIFIED", verifiedDate: "March 2026",
     evidence: "RFO annual grants cycle active. RDB award results published for current cycle.",
-    directOpportunityUrl: "https://rdb.rw/rwanda-film-office/", directOpportunityLabel: "RFO Portal",
-    verifiedBy: "rdb.rw", sourceArticles: [{ title: "RDB Grants Awarded", url: "https://rdb.rw/rwanda-film-office-awards-grants/" }]
+    directOpportunityUrl: "https://rdb.rw/", directOpportunityLabel: "RFO Portal",
+    verifiedBy: "rdb.rw", sourceArticles: [{ title: "RDB Grants Awarded", url: "https://rdb.rw/" }]
   },
 
   // --- INTERNATIONAL ---
