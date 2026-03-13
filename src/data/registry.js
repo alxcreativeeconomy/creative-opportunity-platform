@@ -101,6 +101,44 @@ export const VERIFICATION_REGISTRY = {
     evidence: "UK Global Screen Fund (BFI) confirmed for 2026. Supporting international co-productions. Deadline April 9, 2026.",
     directOpportunityUrl: "https://www.bfi.org.uk/get-funding-support/uk-global-screen-fund", directOpportunityLabel: "BFI Portal",
     verifiedBy: "bfi.org.uk", sourceArticles: [{ title: "BFI: UKGSF", url: "https://www.bfi.org.uk/news/uk-global-screen-fund-funding-awards" }]
+  },
+  
+  // --- NARRATIVE & IMPACT FUNDS ---
+  next_narrative_africa_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "Next Narrative Africa Fund officially active with a $50M target ($40M equity / $10M grants) focused on narrative-shifting content.",
+    directOpportunityUrl: "https://nextnarrativeafricafund.com/", directOpportunityLabel: "Next Narrative Africa Portal",
+    verifiedBy: "nextnarrativeafricafund.com", sourceArticles: [{ title: "Next Narrative Launch", url: "https://nextnarrativeafricafund.com/about" }]
+  },
+  africa_no_filter_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "ANF continues to offer Kekere and Last Mile funding for 2026. Backed by Ford Foundation and Bloomberg.",
+    directOpportunityUrl: "https://africanofilter.org/grants", directOpportunityLabel: "ANF Grants Portal",
+    verifiedBy: "africanofilter.org", sourceArticles: [{ title: "ANF Grant Opportunities", url: "https://africanofilter.org/grants" }]
+  },
+  red_sea_fund_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "Red Sea Fund Cycle 1 (Production) confirmed open from March 6 to March 21, 2026.",
+    directOpportunityUrl: "https://redseafilmfest.com/en/red-sea-fund/", directOpportunityLabel: "Red Sea Fund Portal",
+    verifiedBy: "redseafilmfest.com", sourceArticles: [{ title: "Red Sea Funding Cycles", url: "https://redseafilmfest.com/en/red-sea-fund/" }]
+  },
+  idfa_bertha_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "IDFA Bertha Fund Europe minority co-production deadline set for April 1, 2026.",
+    directOpportunityUrl: "https://www.idfa.nl/en/fund/", directOpportunityLabel: "IDFA Bertha Portal",
+    verifiedBy: "idfa.nl", sourceArticles: [{ title: "IDFA Bertha Deadlines", url: "https://www.idfa.nl/en/info/deadlines-idfa-bertha-fund" }]
+  },
+  mtf_incubator_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "MultiChoice Talent Factory operational for 2026 cohorts across West, East, and Southern Africa.",
+    directOpportunityUrl: "https://multichoicetalentfactory.com/", directOpportunityLabel: "MTF Portal",
+    verifiedBy: "multichoicetalentfactory.com", sourceArticles: [{ title: "MTF Academies", url: "https://multichoicetalentfactory.com/academies/" }]
+  },
+  ccf_diaspora_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "Caribbean Culture Fund active for 2026 following Open Society Foundations seed funding.",
+    directOpportunityUrl: "https://caribbeanculturefund.org/", directOpportunityLabel: "CCF Portal",
+    verifiedBy: "caribbeanculturefund.org", sourceArticles: [{ title: "CCF Call for Applications", url: "https://caribbeanculturefund.org/grants" }]
   }
 };
 

@@ -165,13 +165,83 @@ export const DATABASE_SOURCE = [
     portalUrl: "https://www.bfi.org.uk/get-funding-support/uk-global-screen-fund", requirements: ["Co-prod Agreement", "Finance Plan"],
     businessAction: ["Pipeline ALX Ghana/SA film studios for UK partnerships."],
     tags: ["BFI", "Film", "Co-production", "UK"], matchScore: 98
+  },
+  {
+    id: 'next_narrative_africa_2026', title: "Next Narrative Africa Fund", source: "Next Narrative Africa", country: "Pan-African", region: "Africa",
+    type: "Equity & Grant Studio", status: "Open", sector: "Narrative & Impact", category: "Institutional",
+    value: "$40M Equity / $10M Grants", deadline: "Rolling",
+    description: "Supports commercially viable audio-visual content by African and diaspora storytellers tackling socially relevant themes.",
+    eligibility: "African & Diaspora filmmakers and production companies.",
+    strategicFit: "NARRATIVE: Core fund for shifting stereotypical portrayals of Africa globally.",
+    portalUrl: "https://nextnarrativeafricafund.com/", requirements: ["Pitch Deck", "Commercial Viability", "Impact Strategy"],
+    businessAction: ["Pipeline top-tier ALX content creators for narrative-shifting projects."],
+    tags: ["Film", "Diaspora", "Equity", "Grant"], matchScore: 100
+  },
+  {
+    id: 'africa_no_filter_2026', title: "Africa No Filter (ANF) Grants", source: "Africa No Filter", country: "Pan-African", region: "Africa",
+    type: "Micro & Post-Production Grants", status: "Open", sector: "Narrative & Impact", category: "Institutional",
+    value: "Up to $3,000 (Micro) / Variable (Last Mile)", deadline: "Rolling",
+    description: "Funds storytellers and filmmakers challenging stereotypical portrayals of the African continent.",
+    eligibility: "African creatives, vloggers, and filmmakers.",
+    strategicFit: "IMPACT: Ideal for independent ALX storytellers and digital content creators.",
+    portalUrl: "https://africanofilter.org/", requirements: ["Narrative Shift Focus", "Budget", "Portfolio"],
+    businessAction: ["Onboard ALX creators to the African Narrative Collective."],
+    tags: ["Grant", "Micro-grant", "Content", "Impact"], matchScore: 98
+  },
+  {
+    id: 'red_sea_fund_2026', title: "The Red Sea Fund", source: "Red Sea Film Festival", country: "Pan-African / MENA", region: "International",
+    type: "Production Grant", status: "Open", sector: "Narrative & Impact", category: "Institutional",
+    value: "Variable (From $15M annual pool)", deadline: "March 21, 2026", isExpiring: true,
+    description: "Major fund for African and Arab filmmakers bringing high-cinematic-quality visions to the big screen.",
+    eligibility: "African & Arab directors.",
+    strategicFit: "FILM SCALE: Gateway to major international festival premieres for ALX studios.",
+    portalUrl: "https://redseafilmfest.com/", requirements: ["Script", "Director's Vision", "Budget"],
+    businessAction: ["Prepare ALX film directors for the strict March production window."],
+    tags: ["Film", "Production", "MENA", "Africa"], matchScore: 99
+  },
+  {
+    id: 'idfa_bertha_2026', title: "IDFA Bertha Fund", source: "IDFA", country: "Global South", region: "International",
+    type: "Documentary Grant", status: "Open", sector: "Narrative & Impact", category: "Institutional",
+    value: "€10,000 - €40,000", deadline: "April 1, 2026", isExpiring: true,
+    description: "Supports independent, critical, and artistic documentaries from Africa and developing regions.",
+    eligibility: "Documentary filmmakers from Africa/Global South.",
+    strategicFit: "DOCS: Top-tier funding pipeline for ALX documentary makers.",
+    portalUrl: "https://www.idfa.nl/en/fund/", requirements: ["Documentary Pitch", "Visual Treatment"],
+    businessAction: ["Target April 1 deadline for ALX documentary projects."],
+    tags: ["Documentary", "IDFA", "Grant", "Impact"], matchScore: 95
+  },
+  {
+    id: 'mtf_incubator_2026', title: "MultiChoice Talent Factory (MTF)", source: "MultiChoice", country: "Pan-African", region: "Africa",
+    type: "Incubator & Training", status: "Open", sector: "Narrative & Impact", category: "Training",
+    value: "Fully Funded 12-Month Program", deadline: "Rolling / Annual Windows",
+    description: "Fully-funded professional filmmaking incubator designed to industrialize the African creative economy.",
+    eligibility: "African creatives aged 18-35.",
+    strategicFit: "CAPACITY: Major upskilling pipeline for junior ALX creatives.",
+    portalUrl: "https://multichoicetalentfactory.com/", requirements: ["Portfolio", "Audition/Interview"],
+    businessAction: ["Pipeline young ALX creatives into MTF cohorts."],
+    tags: ["Incubator", "Film", "Training", "MultiChoice"], matchScore: 97
+  },
+  {
+    id: 'ccf_diaspora_2026', title: "Caribbean Culture Fund", source: "CCF", country: "Diaspora", region: "International",
+    type: "Project Grant", status: "Open", sector: "Narrative & Impact", category: "Institutional",
+    value: "$25,000", deadline: "Rolling Windows",
+    description: "Grants for creative projects reflecting connections to the larger African Diaspora and legacy.",
+    eligibility: "Diaspora and Caribbean creatives.",
+    strategicFit: "DIASPORA: Key link for ALX international and cross-cultural collaborations.",
+    portalUrl: "https://caribbeanculturefund.org/", requirements: ["Project Proposal", "Budget"],
+    businessAction: ["Connect ALX diaspora network with CCF cycles."],
+    tags: ["Diaspora", "Grant", "Culture", "Impact"], matchScore: 92
   }
 ];
 
 export const SECTOR_TABS = [
-  { id: 'All', label: 'All' }, { id: 'Tech & Innovation', label: 'Tech & AI' },
-  { id: 'Finance', label: 'Finance' }, { id: 'Content Creation', label: 'Content' },
-  { id: 'Film & TV', label: 'Film & TV' }, { id: 'Creative Economy', label: 'Creative Eco' }
+  { id: 'All', label: 'All' }, 
+  { id: 'Tech & Innovation', label: 'Tech & AI' },
+  { id: 'Finance', label: 'Finance' }, 
+  { id: 'Content Creation', label: 'Content' },
+  { id: 'Film & TV', label: 'Film & TV' }, 
+  { id: 'Creative Economy', label: 'Creative Eco' },
+  { id: 'Narrative & Impact', label: 'Narrative Shift Funds' } // <-- NEW TAB
 ];
 
 export const REGION_TABS = [
@@ -179,4 +249,7 @@ export const REGION_TABS = [
   { id: 'International', label: 'International / Global' }
 ];
 
-export const LOCATION_FILTERS = ['All Locations', 'Pan-African', 'South Africa', 'Kenya', 'Nigeria', 'Egypt', 'Ghana', 'Ethiopia', 'Rwanda', 'Cameroon', 'UK', 'USA'];
+export const LOCATION_FILTERS = [
+  'All Locations', 'Pan-African', 'South Africa', 'Kenya', 'Nigeria', 
+  'Egypt', 'Ghana', 'Ethiopia', 'Rwanda', 'Cameroon', 'UK', 'USA'
+];
