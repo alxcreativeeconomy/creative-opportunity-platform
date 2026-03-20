@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Loader2, Menu, Bell, UserCircle } from 'lucide-react';
+import { Loader2, Menu, Bell, UserCircle, Info } from 'lucide-react';
 import { DATABASE_SOURCE, REGION_TABS } from './data/opportunities';
 import { getVerificationData } from './data/registry';
 import Sidebar from './components/Sidebar';
@@ -28,7 +28,7 @@ const App = () => {
       else setIsSidebarOpen(false);
     };
     window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
+    handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -115,7 +115,7 @@ const App = () => {
           </div>
         </header>
 
-        {/* Content Area with Desktop Constraints */}
+        {/* Content Area */}
         <div className="flex-1 overflow-y-auto scrollbar-hide">
           <div className="max-w-[1600px] mx-auto p-6 lg:p-10">
             {isLoading ? (
@@ -163,6 +163,20 @@ const App = () => {
             )}
           </div>
         </div>
+
+        {/* Sticky Disclaimer Footer */}
+        <footer className="shrink-0 bg-white/80 backdrop-blur-md border-t border-slate-200 px-6 lg:px-10 py-3 z-20">
+          <div className="max-w-[1600px] mx-auto flex items-start gap-3">
+            <div className="shrink-0 mt-0.5">
+              <Info size={14} className="text-emerald-500" />
+            </div>
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              <span className="font-bold text-slate-500">Heads up:</span> Opportunities listed here are sourced from public and partner databases and may require manual outreach to verify current availability. 
+              We recommend confirming details directly with the relevant parties before taking action. 
+              Please also note that some external links may have moved or been taken down by their site owners — if you hit a dead link, it's worth searching for the opportunity directly.
+            </p>
+          </div>
+        </footer>
       </main>
     </div>
   );
