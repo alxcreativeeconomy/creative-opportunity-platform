@@ -36,13 +36,13 @@ export const DATABASE_SOURCE = [
 
   // --- NIGERIA ---
   {
-    id: 'cchub_edtech_2026', title: "CcHUB EdTech Fellowship: $100k Fund", source: "CcHUB / Mastercard Foundation", country: "Nigeria", region: "Africa",
+    id: 'cchub_edtech_2026', title: "CcHUB EdTech Fellowship (Cohort 4)", source: "CcHUB / Mastercard Foundation", country: "Nigeria", region: "Africa",
     type: "Fellowship & Seed Grant", status: "Open", sector: "Tech & Innovation", category: "Training",
-    value: "$100,000 Equity-Free Funding", deadline: "March 30, 2026", isExpiring: true,
+    value: "$100,000 Equity-Free Funding", deadline: "10 April 2026", isExpiring: true,
     description: "Supports EdTech startups with funding and acceleration in Nigeria.",
     eligibility: "Early-stage EdTech startups.",
     strategicFit: "TECH HUB: Direct funding for ALX Nigeria graduates in EdTech.",
-    portalUrl: "https://cchub.africa/", requirements: ["MVP", "Scalable Solution"],
+    portalUrl: "https://futureoflearning.cchub.africa/", requirements: ["MVP", "Scalable Solution"],
     businessAction: ["Pipeline top ALX Nigeria EdTech projects for CcHUB."],
     tags: ["Nigeria", "CcHUB", "EdTech", "Grant"], matchScore: 99
   },
@@ -167,9 +167,9 @@ export const DATABASE_SOURCE = [
     tags: ["BFI", "Film", "Co-production", "UK"], matchScore: 98
   },
   {
-    id: 'next_narrative_africa_2026', title: "Next Narrative Africa Fund", source: "Next Narrative Africa", country: "Pan-African", region: "Africa",
+    id: 'next_narrative_africa_2026', title: "Next Narrative Africa Fund (NNAF)", source: "Next Narrative Africa", country: "Pan-African", region: "Africa",
     type: "Equity & Grant Studio", status: "Open", sector: "Narrative & Impact", category: "Institutional",
-    value: "$40M Equity / $10M Grants", deadline: "Rolling",
+    value: "$50M Fund ($40M Equity / $10M Grants)", deadline: "Rolling / Open (Submissions are currently open)",
     description: "Supports commercially viable audio-visual content by African and diaspora storytellers tackling socially relevant themes.",
     eligibility: "African & Diaspora filmmakers and production companies.",
     strategicFit: "NARRATIVE: Core fund for shifting stereotypical portrayals of Africa globally.",
@@ -231,6 +231,131 @@ export const DATABASE_SOURCE = [
     portalUrl: "https://caribbeanculturefund.org/", requirements: ["Project Proposal", "Budget"],
     businessAction: ["Connect ALX diaspora network with CCF cycles."],
     tags: ["Diaspora", "Grant", "Culture", "Impact"], matchScore: 92
+  },
+
+  // --- STRATEGIC ECOSYSTEM FUNDS & VC ---
+  {
+    id: 'heva_ota_2026', title: "Ota Growth Loan Facility", source: "HEVA Fund", country: "East Africa", region: "Africa",
+    type: "Debt Financing", status: "Open", sector: "Creative Economy", category: "Institutional",
+    value: "Growth Loan Facility", deadline: "Rolling / Open Call (Disbursing through Dec 31, 2026)",
+    description: "Debt financing tailored specifically for creative MSMEs.",
+    eligibility: "Creative MSMEs with a solid revenue history.",
+    strategicFit: "FINANCE: Scaling capital for revenue-generating ALX ventures.",
+    portalUrl: "https://www.hevafund.com/", requirements: ["Financials", "Business Registration"],
+    businessAction: ["Pipeline mature creative startups for debt facility."],
+    tags: ["Debt", "HEVA", "Creative MSME"], matchScore: 98
+  },
+  {
+    id: 'proparco_crea_2026', title: "CREA Fund (Guarantee Mechanism)", source: "Proparco / European Union", country: "Pan-African", region: "Africa",
+    type: "Guarantee Facility", status: "Open", sector: "Finance", category: "Institutional",
+    value: "Guarantee Mechanism & Tech Assistance", deadline: "Ongoing (Via partner financial intermediaries)",
+    description: "Guarantee mechanism to de-risk loans to cultural and creative industries.",
+    eligibility: "Financial institutions lending to creative industries, or creatives seeking backed loans.",
+    strategicFit: "FINANCE: Institutional de-risking for ALX creative portfolios.",
+    portalUrl: "https://www.proparco.fr/", requirements: ["Apply via partner banks"],
+    businessAction: ["Identify local partner banks for CREA-backed loans."],
+    tags: ["Guarantee", "Proparco", "EU", "Finance"], matchScore: 95
+  },
+  {
+    id: 'sony_innovation_africa', title: "Sony Innovation Fund: Africa", source: "Sony Ventures / IFC", country: "Pan-African", region: "Africa",
+    type: "Venture Capital", status: "Open", sector: "Tech & Innovation", category: "Institutional",
+    value: "Seed/Early-Stage Investments", deadline: "Rolling / Ongoing venture investments",
+    description: "Investments backing early-stage entertainment and creative tech startups.",
+    eligibility: "African creative and entertainment tech startups.",
+    strategicFit: "VC: Premium tech-creative crossover funding.",
+    portalUrl: "https://www.sonyinnovationfund.com/", requirements: ["Pitch Deck", "Tech Innovation"],
+    businessAction: ["Pitch high-growth gaming/entertainment tech startups."],
+    tags: ["VC", "Sony", "IFC", "Tech"], matchScore: 100
+  },
+  {
+    id: 'mac_vc_2026', title: "MaC Venture Capital: Pre-Seed & Seed", source: "MaC Venture Capital", country: "Global / Africa", region: "International",
+    type: "Venture Capital", status: "Open", sector: "Tech & Innovation", category: "Institutional",
+    value: "Pre-Seed & Seed Funding", deadline: "Rolling / Ongoing (Proprietary deal flow)",
+    description: "Funding for visionary founders shifting culture through technology.",
+    eligibility: "Pre-seed and seed stage startups.",
+    strategicFit: "VC: Core seed funding for ALX tech-creative founders.",
+    portalUrl: "https://macventurecapital.com/", requirements: ["Warm Intro", "Pitch Deck"],
+    businessAction: ["Leverage network for proprietary deal flow intro."],
+    tags: ["VC", "Seed", "Culture Tech"], matchScore: 96
+  },
+  {
+    id: 'afdb_aestif_2026', title: "African Education, Science, Technology & Innovation Fund (AESTIF)", source: "AfDB", country: "Pan-African", region: "Africa",
+    type: "Institutional Fund", status: "Upcoming", sector: "Tech & Innovation", category: "Institutional",
+    value: "TBA", deadline: "Not yet open",
+    description: "Upcoming framework supporting skills, education, and innovation across Africa.",
+    eligibility: "TBA (Currently in framework/development stage).",
+    strategicFit: "FUTURE PIPELINE: Massive upcoming continental fund to monitor.",
+    portalUrl: "https://www.afdb.org/", requirements: ["None yet"],
+    businessAction: ["Monitor AfDB announcements for formal fund launch."],
+    tags: ["AfDB", "Education", "Innovation"], matchScore: 90
+  },
+  {
+    id: 'wbdm_mobility_2026', title: "Mobility Grants Africa - Europe", source: "WBDM / Africa-Europe", country: "Africa / Europe", region: "International",
+    type: "Mobility Grant", status: "Open", sector: "Creative Economy", category: "Institutional",
+    value: "Travel & Mobility Support", deadline: "15 March 2026", isExpiring: true,
+    description: "Mobility grants supporting cross-continental travel and creative exchange.",
+    eligibility: "African and European creatives.",
+    strategicFit: "MOBILITY: Immediate travel funding for cross-continental projects.",
+    portalUrl: "https://www.wbdm.be/", requirements: ["Travel Justification", "Portfolio"],
+    businessAction: ["Urgent: Submit immediate mobility requests."],
+    tags: ["Mobility", "Africa-Europe", "Travel"], matchScore: 90
+  },
+
+  // --- PAST / CLOSED OPPORTUNITIES (2025 Windows) ---
+  {
+    id: 'unesco_ifcd_2025', title: "16th International Fund for Cultural Diversity (IFCD)", source: "UNESCO", country: "Global", region: "International",
+    type: "Project Grant", status: "Closed", sector: "Creative Economy", category: "Institutional",
+    value: "Up to $100,000", deadline: "21 May 2025 (Noon, Paris time)",
+    description: "Support for the emergence of dynamic cultural sectors in developing countries.",
+    eligibility: "Public authorities and NGOs from eligible developing countries.",
+    strategicFit: "CULTURE: Major global fund for cultural policy.",
+    portalUrl: "https://en.unesco.org/creativity/ifcd/apply", requirements: ["Project Proposal", "Budget"],
+    businessAction: ["Monitor for next annual cycle."],
+    tags: ["UNESCO", "Culture", "Global South"], matchScore: 90
+  },
+  {
+    id: 'ford_justfilms_2025', title: "JustFilms (General Operating & Core Support)", source: "Ford Foundation", country: "Global", region: "International",
+    type: "Operating Grant", status: "Closed", sector: "Narrative & Impact", category: "Institutional",
+    value: "Core Support", deadline: "08 September 2025 (5:00 PM ET)",
+    description: "Supports artist-driven, feature-length documentary films intersecting with social justice.",
+    eligibility: "Organizations aligned with Ford Foundation priorities.",
+    strategicFit: "IMPACT: Core funding for organizations shifting narratives.",
+    portalUrl: "https://www.fordfoundation.org/work/our-grants/justfilms/", requirements: ["LOI", "Social Justice Focus"],
+    businessAction: ["Monitor for next cycle."],
+    tags: ["Ford Foundation", "Documentary", "Impact"], matchScore: 95
+  },
+  {
+    id: 'british_council_ceg_2025', title: "Creative Economy Grants", source: "British Council", country: "Global", region: "International",
+    type: "Collaboration Grant", status: "Closed", sector: "Creative Economy", category: "Institutional",
+    value: "Variable", deadline: "22 October 2025",
+    description: "International Collaboration Grants supporting cross-border partnerships.",
+    eligibility: "Creative organizations partnering with the UK.",
+    strategicFit: "PARTNERSHIP: UK-global collaboration.",
+    portalUrl: "https://www.britishcouncil.org/", requirements: ["UK Partner", "Proposal"],
+    businessAction: ["Identify UK partners for next cycle."],
+    tags: ["UK", "British Council", "Collaboration"], matchScore: 92
+  },
+  {
+    id: 'if_connect_create_2025', title: "Connect & Create (Creative Tandems & Mobility)", source: "Institut Français", country: "Global", region: "International",
+    type: "Mobility & Collaboration", status: "Closed", sector: "Creative Economy", category: "Institutional",
+    value: "Variable", deadline: "14 Dec 2025 (Tandems) / 30 Nov 2025 (Mobility)",
+    description: "Supports creative tandems and professional mobility of performing arts.",
+    eligibility: "Artists and cultural professionals.",
+    strategicFit: "MOBILITY: Cross-border collaboration with France.",
+    portalUrl: "https://www.pro.institutfrancais.com/", requirements: ["Mobility Plan", "Partnership"],
+    businessAction: ["Map ALX creatives needing mobility funding."],
+    tags: ["France", "Mobility", "Arts"], matchScore: 88
+  },
+  {
+    id: 'creative_europe_coop_2025', title: "European Cooperation Projects (Culture Strand)", source: "Creative Europe", country: "Europe & Partners", region: "International",
+    type: "Cooperation Grant", status: "Closed", sector: "Creative Economy", category: "Institutional",
+    value: "€200k - €1M", deadline: "13 May 2025 (17:00, Brussels time)",
+    description: "Fosters cooperation between organisations active in the culture field.",
+    eligibility: "Consortiums from eligible Creative Europe countries.",
+    strategicFit: "EU EXPANSION: Strategic European partnerships.",
+    portalUrl: "https://culture.ec.europa.eu/", requirements: ["Consortium", "Co-funding"],
+    businessAction: ["Join EU consortiums as third-country partner."],
+    tags: ["EU", "Cooperation", "Culture"], matchScore: 85
   }
 ];
 
@@ -253,3 +378,4 @@ export const LOCATION_FILTERS = [
   'All Locations', 'Pan-African', 'South Africa', 'Kenya', 'Nigeria', 
   'Egypt', 'Ghana', 'Ethiopia', 'Rwanda', 'Cameroon', 'UK', 'USA'
 ];
+

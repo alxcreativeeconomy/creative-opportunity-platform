@@ -25,6 +25,68 @@ export const VERIFICATION_REGISTRY = {
     verifiedBy: "mipafrica.com", sourceArticles: [{ title: "MIP Africa Market", url: "https://www.mipafrica.com/en-gb/about.html" }]
   },
 
+  // --- NEW ADDITIONS & 2025 ARCHIVE ---
+  heva_ota_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "HEVA Fund confirmed actively disbursing loans through the Ota Growth facility until Dec 31, 2026.",
+    directOpportunityUrl: "https://www.hevafund.com/", directOpportunityLabel: "HEVA Fund Portal",
+    verifiedBy: "hevafund.com", sourceArticles: [{ title: "Ota Growth Loan Facility", url: "https://www.hevafund.com/" }]
+  },
+  proparco_crea_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "CREA Fund guarantee mechanism is ongoing and managed via partner financial intermediaries.",
+    directOpportunityUrl: "https://www.proparco.fr/", directOpportunityLabel: "Proparco CREA Info",
+    verifiedBy: "proparco.fr", sourceArticles: [{ title: "CREA Fund Overview", url: "https://www.proparco.fr/" }]
+  },
+  mac_vc_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "MaC Venture Capital actively taking proprietary deal flow for Pre-Seed and Seed.",
+    directOpportunityUrl: "https://macventurecapital.com/", directOpportunityLabel: "MaC VC Portal",
+    verifiedBy: "macventurecapital.com", sourceArticles: [{ title: "MaC VC About", url: "https://macventurecapital.com/" }]
+  },
+  afdb_aestif_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "AESTIF is currently in the framework/development stage with the AfDB. Call for MSMEs not yet open.",
+    directOpportunityUrl: "https://www.afdb.org/", directOpportunityLabel: "AfDB Skills & Education",
+    verifiedBy: "afdb.org", sourceArticles: [{ title: "AfDB Initiatives", url: "https://www.afdb.org/" }]
+  },
+  wbdm_mobility_2026: {
+    verificationLevel: "VERIFIED", verifiedDate: "March 2026",
+    evidence: "WBDM Mobility Grants Africa - Europe deadline confirmed for 15 March 2026.",
+    directOpportunityUrl: "https://www.wbdm.be/", directOpportunityLabel: "WBDM Grants",
+    verifiedBy: "wbdm.be", sourceArticles: [{ title: "Mobility Grants Application", url: "https://www.wbdm.be/" }]
+  },
+  unesco_ifcd_2025: {
+    verificationLevel: "ARCHIVED", verifiedDate: "March 2026",
+    evidence: "16th IFCD cycle closed on 21 May 2025. Monitoring for future cycles.",
+    directOpportunityUrl: "https://en.unesco.org/creativity/ifcd/apply", directOpportunityLabel: "UNESCO IFCD",
+    verifiedBy: "unesco.org", sourceArticles: []
+  },
+  ford_justfilms_2025: {
+    verificationLevel: "ARCHIVED", verifiedDate: "March 2026",
+    evidence: "JustFilms General Operating & Core Support LOI closed 08 September 2025.",
+    directOpportunityUrl: "https://www.fordfoundation.org/work/our-grants/justfilms/", directOpportunityLabel: "JustFilms LOI Portal",
+    verifiedBy: "fordfoundation.org", sourceArticles: []
+  },
+  british_council_ceg_2025: {
+    verificationLevel: "ARCHIVED", verifiedDate: "March 2026",
+    evidence: "Creative Economy Grants closed 22 October 2025.",
+    directOpportunityUrl: "https://www.britishcouncil.org/", directOpportunityLabel: "British Council",
+    verifiedBy: "britishcouncil.org", sourceArticles: []
+  },
+  if_connect_create_2025: {
+    verificationLevel: "ARCHIVED", verifiedDate: "March 2026",
+    evidence: "Connect & Create applications closed late 2025.",
+    directOpportunityUrl: "https://www.pro.institutfrancais.com/", directOpportunityLabel: "Connect & Create",
+    verifiedBy: "institutfrancais.com", sourceArticles: []
+  },
+  creative_europe_coop_2025: {
+    verificationLevel: "ARCHIVED", verifiedDate: "March 2026",
+    evidence: "European Cooperation Projects 2025 cycle closed 13 May 2025.",
+    directOpportunityUrl: "https://culture.ec.europa.eu/", directOpportunityLabel: "Creative Europe",
+    verifiedBy: "europa.eu", sourceArticles: []
+  },
+
   // --- NIGERIA ---
   cchub_edtech_2026: {
     verificationLevel: "VERIFIED", verifiedDate: "March 2026",
@@ -129,6 +191,8 @@ export const VERIFICATION_REGISTRY = {
     verifiedBy: "idfa.nl", sourceArticles: [{ title: "IDFA Bertha Deadlines", url: "https://www.idfa.nl/en/info/deadlines-idfa-bertha-fund" }]
   },
   mtf_incubator_2026: {
+
+
     verificationLevel: "VERIFIED", verifiedDate: "March 2026",
     evidence: "MultiChoice Talent Factory operational for 2026 cohorts across West, East, and Southern Africa.",
     directOpportunityUrl: "https://multichoicetalentfactory.com/", directOpportunityLabel: "MTF Portal",
