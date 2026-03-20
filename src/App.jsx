@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import OpportunityMatrix from './components/OpportunityMatrix';
 import VerificationReport from './components/VerificationReport';
 import FilterBar from './components/FilterBar';
+import DealsReport from './components/DealsReport';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -17,7 +18,7 @@ const App = () => {
   const [opportunities, setOpportunities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState(null);
-  
+
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [verificationFilter, setVerificationFilter] = useState('All');
@@ -52,10 +53,10 @@ const App = () => {
       if (!vd || vd.verificationLevel.toUpperCase() !== verificationFilter.toUpperCase()) return false;
     }
     const q = searchQuery.toLowerCase();
-    return !q || 
-           op.title.toLowerCase().includes(q) || 
-           op.description.toLowerCase().includes(q) || 
-           op.source.toLowerCase().includes(q);
+    return !q ||
+      op.title.toLowerCase().includes(q) ||
+      op.description.toLowerCase().includes(q) ||
+      op.source.toLowerCase().includes(q);
   });
 
   const handleSelectOpportunity = (op) => {
@@ -63,20 +64,28 @@ const App = () => {
     setActiveTab('search');
   };
 
+  const getHeaderTitle = () => {
+    if (activeTab === 'dashboard') return 'Executive Overview';
+    if (activeTab === 'search' && !selectedOpportunity) return 'Opportunity Matrix';
+    if (activeTab === 'search' && selectedOpportunity) return 'Verification Intelligence';
+    if (activeTab === 'deals-report') return 'Deals Report';
+    return '';
+  };
+
   return (
     <div className="flex h-screen bg-[#F8FAFC] text-slate-900 font-sans overflow-hidden">
-      <Sidebar 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        isSidebarOpen={isSidebarOpen} 
-        setIsSidebarOpen={setIsSidebarOpen} 
+      <Sidebar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
       />
 
       <main className="flex-1 flex flex-col h-full overflow-hidden relative z-10 w-full">
         {/* Executive Glass Header */}
         <header className="h-20 bg-white/80 backdrop-blur-md border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 z-20 sticky top-0">
           <div className="flex items-center gap-6">
-            <button 
+            <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               className="p-2.5 text-slate-500 hover:bg-slate-100 hover:text-emerald-600 rounded-xl transition-all"
             >
@@ -85,9 +94,7 @@ const App = () => {
             <div className="h-8 w-[1px] bg-slate-200 hidden md:block"></div>
             <div>
               <h1 className="text-xl lg:text-2xl font-black text-slate-800 tracking-tight">
-                {activeTab === 'dashboard' && 'Executive Overview'}
-                {activeTab === 'search' && !selectedOpportunity && 'Opportunity Matrix'}
-                {activeTab === 'search' && selectedOpportunity && 'Verification Intelligence'}
+                {getHeaderTitle()}
               </h1>
               <p className="hidden md:block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-0.5">
                 ALX Creative Economy Operational Node
@@ -128,11 +135,13 @@ const App = () => {
               </div>
             ) : (
               <>
-                {activeTab === 'dashboard' && <Dashboard onSelectDeal={handleSelectOpportunity} />}
+                {activeTab === 'dashboard' && (
+                  <Dashboard onSelectDeal={handleSelectOpportunity} />
+                )}
 
                 {activeTab === 'search' && !selectedOpportunity && (
                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-                    <FilterBar 
+                    <FilterBar
                       searchQuery={searchQuery}
                       setSearchQuery={setSearchQuery}
                       selectedSector={selectedSector}
@@ -144,20 +153,24 @@ const App = () => {
                       activeRegion={activeRegion}
                       setActiveRegion={setActiveRegion}
                     />
-                    <OpportunityMatrix 
-                      opportunities={filteredOpportunities} 
-                      onSelectOpportunity={handleSelectOpportunity} 
+                    <OpportunityMatrix
+                      opportunities={filteredOpportunities}
+                      onSelectOpportunity={handleSelectOpportunity}
                     />
                   </div>
                 )}
 
                 {activeTab === 'search' && selectedOpportunity && (
                   <div className="animate-in zoom-in-95 fade-in duration-500">
-                    <VerificationReport 
-                      op={selectedOpportunity} 
-                      onBack={() => setSelectedOpportunity(null)} 
+                    <VerificationReport
+                      op={selectedOpportunity}
+                      onBack={() => setSelectedOpportunity(null)}
                     />
                   </div>
+                )}
+
+                {activeTab === 'deals-report' && (
+                  <DealsReport />
                 )}
               </>
             )}
@@ -171,8 +184,8 @@ const App = () => {
               <Info size={14} className="text-emerald-500" />
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              <span className="font-bold text-slate-500">Heads up:</span> Opportunities listed here are sourced from public and partner databases and may require manual outreach to verify current availability. 
-              We recommend confirming details directly with the relevant parties before taking action. 
+              <span className="font-bold text-slate-500">Heads up:</span> Opportunities listed here are sourced from public and partner databases and may require manual outreach to verify current availability.
+              We recommend confirming details directly with the relevant parties before taking action.
               Please also note that some external links may have moved or been taken down by their site owners — if you hit a dead link, it's worth searching for the opportunity directly.
             </p>
           </div>
