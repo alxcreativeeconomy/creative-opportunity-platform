@@ -14,15 +14,32 @@ const OpportunityCard = ({ op, onSelect }) => {
     console.warn(`No match found in registry for ID: ${op.id}`);
   }
 
-  const urgentNFVF = op.id === 'nfvf_funding_2026'; 
   const isExpiringSoon = op.isExpiring === true;
-  
+
+  const deadlineHasPassed = (() => {
+    if (!op.deadline) return false;
+    const dl = op.deadline.toLowerCase();
+    if (dl.includes('rolling') || dl.includes('ongoing') || dl.includes('window') || dl.includes('tba') || dl.includes('not yet')) return false;
+    const parsed = new Date(op.deadline);
+    return !isNaN(parsed.getTime()) && parsed < new Date();
+  })();
+
   return (
     <div className={`bg-white rounded-2xl border p-5 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group flex flex-col h-full relative overflow-hidden ${op.status === 'Closed' ? 'border-slate-200 opacity-60' : 'border-slate-200 hover:border-emerald-300'}`}>
       {op.matchScore > 95 && <div className="absolute top-0 right-0 bg-gradient-to-l from-amber-400 to-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-bl-lg z-20">ALX Top Target</div>}
-      {(urgentNFVF || isExpiringSoon) && (
+      {op.status === 'Closed' && (
+        <div className="absolute top-0 left-0 bg-slate-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-br-lg z-20 flex items-center gap-1 shadow-lg">
+          <Timer size={10}/> CLOSED
+        </div>
+      )}
+      {op.status !== 'Closed' && isExpiringSoon && deadlineHasPassed && (
+        <div className="absolute top-0 left-0 bg-slate-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-br-lg z-20 flex items-center gap-1 shadow-lg">
+          <Timer size={10}/> DEADLINE PASSED
+        </div>
+      )}
+      {op.status !== 'Closed' && isExpiringSoon && !deadlineHasPassed && (
         <div className="absolute top-0 left-0 bg-rose-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-br-lg z-20 flex items-center gap-1 shadow-lg">
-          <Timer size={10} className="animate-pulse"/> 
+          <Timer size={10} className="animate-pulse"/>
           URGENT: CLOSES {op.deadline.toUpperCase()}
         </div>
       )}

@@ -294,12 +294,12 @@ const VERIFIED_DATA = [
     source: 'WBDM / Africa-Europe',
     country: 'Africa / Europe',
     status: 'attention',
-    badge: 'Next Cut-off Jun 15',
-    badgeType: 'amber',
+    badge: 'Open – Next Cut-off Jun 15',
+    badgeType: 'green',
     portalUrl: 'https://www.wbdm.be/',
     portalLive: true,
-    verdict: 'Confirmed and legitimate — Goethe-Institut / Africa-Europe Partnerships for Culture (€4,000 per mobility, up to 195 grants total). The March 15 cut-off has passed. Next cut-offs: June 15 and September 15, 2026. Note: the primary application portal is via Goethe-Institut, not WBDM (a Belgian design org that promotes the grant).',
-    action: 'Update deadline to June 15. Add note that primary portal is Goethe-Institut.',
+    verdict: 'Confirmed and legitimate — Goethe-Institut / Africa-Europe Partnerships for Culture (€4,000 per mobility, up to 195 grants total). The March 15 cut-off has passed. Next cut-offs: June 15 and September 15, 2026. Primary application portal is via Goethe-Institut, not WBDM (a Belgian design org that promotes the grant). Opportunity is ACTIVE — June 15 window is now open.',
+    action: 'Pipeline mobility applications now for the June 15 cut-off. Apply via Goethe-Institut portal.',
   },
 
   // ── ECOSYSTEM / VC ──
@@ -354,6 +354,99 @@ const VERIFIED_DATA = [
     portalLive: true,
     verdict: 'Confirmed as a real AfDB framework in development. Not yet open for applications — currently in the design/framework stage. The AfDB portal is live. This is a watch-and-wait deal with high future potential.',
     action: 'No action needed yet. Set a quarterly reminder to check AfDB announcements.',
+  },
+
+  // ── APRIL 2026 NEW ADDITIONS ──
+  {
+    id: 'tef_2026',
+    title: 'Tony Elumelu Foundation: 2026 Entrepreneurship Programme',
+    source: 'Tony Elumelu Foundation',
+    country: 'Pan-African',
+    status: 'expired',
+    badge: 'Closed – Mar 1, 2026',
+    badgeType: 'gray',
+    portalUrl: 'https://www.tefconnect.com/',
+    portalLive: true,
+    verdict: 'Fully verified and legitimate. TEF is Africa\'s most recognised entrepreneurship programme — $5,000 non-refundable seed capital + 12-week training + mentorship for founders across all 54 African countries. The 2026 application window (Jan 1–Mar 1) has now closed. The portal remains live on TEFConnect. This is a must-track pipeline for early-stage ALX cohorts.',
+    action: 'Mark as Closed. Pipeline early-stage ALX cohorts for Jan 2027 cycle. Monitor TEFConnect from October 2026.',
+  },
+  {
+    id: 'google_startups_accelerator_2026',
+    title: 'Google for Startups Accelerator: Africa (Class 10)',
+    source: 'Google',
+    country: 'Pan-African',
+    status: 'expired',
+    badge: 'Closed – Mar 18, 2026',
+    badgeType: 'gray',
+    portalUrl: 'https://startup.google.com/programs/accelerator/africa/',
+    portalLive: true,
+    verdict: 'Fully verified and highly credible. Google for Startups Accelerator Africa Class 10 is a 12-week hybrid, equity-free programme running April–June 2026 for AI-first growth-stage startups. Applications closed March 18, 2026 — current cohort is now underway. Portal is live and will reopen for Class 11 (expected early 2027). Part of Google\'s $1B Africa commitment.',
+    action: 'Mark as Closed. Identify ALX tech-creative alumni for Class 11 outreach from Q4 2026.',
+  },
+  {
+    id: 'unesco_ifcd_2026',
+    title: 'UNESCO IFCD 2026: International Fund for Cultural Diversity (17th Cycle)',
+    source: 'UNESCO',
+    country: 'Pan-African / Global',
+    status: 'verified',
+    badge: 'Open – Deadline May 6',
+    badgeType: 'green',
+    portalUrl: 'https://www.unesco.org/creativity/en/ifcd/apply',
+    portalLive: true,
+    verdict: 'Fully verified — UNESCO IFCD is one of the most credible and prestigious cultural funds globally. The 17th cycle is officially open March 23 – May 6, 2026 (noon Paris time). Grants of up to $100,000 per project. Eligible African countries include Nigeria, Kenya, South Africa, Ghana, Rwanda, Ethiopia, Cameroon, Tanzania, Zambia and 14 others. Applicants must be NGOs or public authorities. Projects must run 12–24 months.',
+    action: 'URGENT: Deadline May 6. Fast-track applications for eligible ALX partner NGOs immediately.',
+  },
+  {
+    id: 'visa_fintech_accelerator_2026',
+    title: 'Visa Africa Fintech Accelerator 2026 (Cohort 6)',
+    source: 'Visa Inc.',
+    country: 'Pan-African',
+    status: 'verified',
+    badge: 'Open – Deadline May 17',
+    badgeType: 'green',
+    portalUrl: 'https://africa.visa.com/en_MW/visa-everywhere/innovation/visa-accelerator.html',
+    portalLive: true,
+    verdict: 'Fully verified — Visa Africa Fintech Accelerator is a well-established programme with 100+ alumni across Africa and a combined $1.4B+ valuation. Cohort 6 is open with a May 17, 2026 deadline. 3-month hybrid programme: 10 virtual focus weeks + Investor Demo Day. Benefits include $200,000+ in product perks, mentorship, and Visa network access. Targets Seed to Series A fintech startups with an MVP operating in African markets.',
+    action: 'Submit qualifying ALX fintech alumni before May 17. Identify Seed–Series A fintech startups in pipeline now.',
+  },
+  {
+    id: 'innovate_africa_media_2026',
+    title: 'innovateAFRICA Fund: Civic Media & Digital News Grants',
+    source: 'innovateAFRICA',
+    country: 'Pan-African',
+    status: 'verified',
+    badge: 'Verified – Rolling',
+    badgeType: 'green',
+    portalUrl: 'https://innovateafrica.fund/apply/',
+    portalLive: true,
+    verdict: 'Confirmed and legitimate — innovateAFRICA is Africa\'s largest civic media fund, supporting digital news startups and journalism experiments. Grants range from $12,000 to $100,000. Supports data journalism, investigative reporting, audience engagement, newsroom innovation, and digital media business models. Application portal is active at innovateafrica.fund/apply. Rolling intake with no single fixed deadline — apply as ready.',
+    action: 'Map ALX journalism and content creation graduates to the $12k–$100k grant tiers. Submit standout projects now.',
+  },
+  {
+    id: 'sampra_dev_fund_2026',
+    title: 'SAMPRA Development Fund: Live Music & Performance Support',
+    source: 'SAMPRA South Africa',
+    country: 'South Africa',
+    status: 'verified',
+    badge: 'Verified – Jun 2026 Cycle',
+    badgeType: 'green',
+    portalUrl: 'https://www.sampra.org.za/',
+    portalLive: true,
+    verdict: 'SAMPRA (South African Music Performance Rights Association) is a legitimate and active rights organisation. The Development Fund for the June 2026–May 2027 cycle is confirmed open. Supports both cultural organisations staging live festivals/concerts and professional recording artists/bands seeking performance grants locally and internationally. Applications go directly through sampra.org.za.',
+    action: 'Connect ALX South Africa music graduates to SAMPRA Development Fund. Prioritise artists planning live events in H2 2026.',
+  },
+  {
+    id: 'au_media_fellowship_2026',
+    title: 'African Union Media Fellowship 3.0 (Fully Funded)',
+    source: 'African Union',
+    country: 'Pan-African',
+    status: 'verified',
+    badge: 'Verified – Rolling',
+    badgeType: 'green',
+    portalUrl: 'https://au.int/',
+    portalLive: true,
+    verdict: 'Confirmed and legitimate — the African Union Media Fellowship 3.0 is a fully funded opportunity for African journalists, content creators, bloggers, vloggers, and podcasters. All travel, accommodation, and participation costs are covered by the AU. Fellows produce high-quality content aligned with the AU development agenda. Three priorities: quality impact content, AU alignment, and expanded outreach for credible African storytelling.',
+    action: 'Identify ALX journalism and content creation alumni. Submit strong content proposals aligned with AU development priorities.',
   },
 
   // ── CLOSED / PAST ──
@@ -439,15 +532,15 @@ const STATUS_CONFIG = {
 };
 
 const SECTIONS = [
-  { label: 'South Africa',      ids: ['mge_dsac_2026','nfvf_funding_2026','nac_sa_2026'] },
+  { label: 'South Africa',      ids: ['mge_dsac_2026','nfvf_funding_2026','nac_sa_2026','sampra_dev_fund_2026'] },
   { label: 'Nigeria',           ids: ['cchub_edtech_2026','nigeria_idice_fund'] },
   { label: 'Kenya',             ids: ['kenya_film_coproduction'] },
   { label: 'Ethiopia',          ids: ['ethiopia_startup_fund'] },
   { label: 'Rwanda',            ids: ['kigali_innovation_city','rwanda_film_office_grants'] },
-  { label: 'Pan-African',       ids: ['ifc_shewins_2026','canex_africa','mip_africa_2026','next_narrative_africa_2026','africa_no_filter_2026','mtf_incubator_2026','ccf_diaspora_2026'] },
-  { label: 'International',     ids: ['arts_council_uk_2026','bfi_global_screen_2026','red_sea_fund_2026','idfa_bertha_2026','mac_vc_2026','wbdm_mobility_2026'] },
+  { label: 'Pan-African',       ids: ['ifc_shewins_2026','canex_africa','mip_africa_2026','next_narrative_africa_2026','africa_no_filter_2026','mtf_incubator_2026','ccf_diaspora_2026','visa_fintech_accelerator_2026','innovate_africa_media_2026','au_media_fellowship_2026'] },
+  { label: 'International',     ids: ['arts_council_uk_2026','bfi_global_screen_2026','red_sea_fund_2026','idfa_bertha_2026','mac_vc_2026','wbdm_mobility_2026','unesco_ifcd_2026'] },
   { label: 'Ecosystem & VC',    ids: ['heva_ota_2026','proparco_crea_2026','sony_innovation_africa','afdb_aestif_2026'] },
-  { label: 'Closed / Past',     ids: ['unesco_ifcd_2025','ford_justfilms_2025','british_council_ceg_2025','if_connect_create_2025','creative_europe_coop_2025'] },
+  { label: 'Closed / Past',     ids: ['tef_2026','google_startups_accelerator_2026','unesco_ifcd_2025','ford_justfilms_2025','british_council_ceg_2025','if_connect_create_2025','creative_europe_coop_2025'] },
 ];
 
 const dealMap = Object.fromEntries(VERIFIED_DATA.map(d => [d.id, d]));
@@ -525,7 +618,7 @@ const DealsReport = () => {
       {/* Header */}
       <div>
         <h2 className="text-2xl font-black text-slate-800 tracking-tight">Deals Verification Report</h2>
-        <p className="text-sm text-slate-400 mt-1">Manual intelligence check across all 31 deals · Last verified March 20, 2026</p>
+        <p className="text-sm text-slate-400 mt-1">Manual intelligence check across all 38 deals · Last verified April 20, 2026</p>
       </div>
 
       {/* Summary Stats */}
@@ -573,7 +666,7 @@ const DealsReport = () => {
       {/* Footer note */}
       <div className="bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4">
         <p className="text-xs text-slate-500 leading-relaxed">
-          <span className="font-bold text-slate-600">Verification methodology:</span> Each deal was cross-referenced against its official portal, recent news sources, and public announcements as of March 20, 2026. Portal availability was tested at time of report. Deal statuses may change — always confirm directly with the funding body before committing applicant resources.
+          <span className="font-bold text-slate-600">Verification methodology:</span> Each deal was cross-referenced against its official portal, recent news sources, and public announcements as of April 20, 2026. Portal availability was tested at time of report. Deal statuses may change — always confirm directly with the funding body before committing applicant resources.
         </p>
       </div>
     </div>

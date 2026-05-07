@@ -45,7 +45,6 @@ const App = () => {
 
   const filteredOpportunities = opportunities.filter(op => {
     if (op.region !== activeRegion) return false;
-    if (op.status === 'Closed') return false;
     if (selectedSector !== 'All' && op.sector !== selectedSector) return false;
     if (selectedLocation !== 'All Locations' && op.country && !op.country.includes(selectedLocation)) return false;
     if (verificationFilter !== 'All') {

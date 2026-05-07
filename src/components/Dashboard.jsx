@@ -57,7 +57,7 @@ const Dashboard = ({ onSelectDeal }) => {
           color="bg-amber-500" subValue="Match Score Threshold > 98%" trend="Elite"
         />
         <StatCard 
-          icon={DollarSign} label="Estimated Allocation" value="$2.7B+" 
+          icon={DollarSign} label="Estimated Allocation" value="$3.2B+"
           color="bg-blue-500" subValue="Combined Fund Capacities" trend="Verified"
         />
       </div>
