@@ -22,6 +22,8 @@ const App = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [verificationFilter, setVerificationFilter] = useState('All');
+  const [filterExpiring, setFilterExpiring] = useState(false);
+  const [deadlineFilter, setDeadlineFilter] = useState('All');
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,13 +45,39 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const parseDeadline = (str) => {
+    if (!str) return null;
+    if (/rolling|ongoing|not yet|tba|window|cycle|periodic|open call/i.test(str)) return null;
+    const direct = new Date(str);
+    if (!isNaN(direct.getTime())) return direct;
+    const patterns = [
+      /\d{1,2}\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}/i,
+      /(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},?\s+\d{4}/i,
+    ];
+    for (const pattern of patterns) {
+      const match = str.match(pattern);
+      if (match) {
+        const d = new Date(match[0]);
+        if (!isNaN(d.getTime())) return d;
+      }
+    }
+    return null;
+  };
+
   const filteredOpportunities = opportunities.filter(op => {
     if (op.region !== activeRegion) return false;
+    if (filterExpiring && !op.isExpiring) return false;
     if (selectedSector !== 'All' && op.sector !== selectedSector) return false;
     if (selectedLocation !== 'All Locations' && op.country && !op.country.includes(selectedLocation)) return false;
     if (verificationFilter !== 'All') {
       const vd = getVerificationData(op.id);
       if (!vd || vd.verificationLevel.toUpperCase() !== verificationFilter.toUpperCase()) return false;
+    }
+    if (deadlineFilter !== 'All') {
+      const cutoff = new Date();
+      cutoff.setMonth(cutoff.getMonth() + parseInt(deadlineFilter));
+      const d = parseDeadline(op.deadline);
+      if (!d || d > cutoff) return false;
     }
     const q = searchQuery.toLowerCase();
     return !q ||
@@ -61,6 +89,12 @@ const App = () => {
   const handleSelectOpportunity = (op) => {
     setSelectedOpportunity(op);
     setActiveTab('search');
+  };
+
+  const handleDeadlinesClick = () => {
+    setFilterExpiring(true);
+    setActiveTab('search');
+    setSelectedOpportunity(null);
   };
 
   const getHeaderTitle = () => {
@@ -135,7 +169,7 @@ const App = () => {
             ) : (
               <>
                 {activeTab === 'dashboard' && (
-                  <Dashboard onSelectDeal={handleSelectOpportunity} />
+                  <Dashboard onSelectDeal={handleSelectOpportunity} onDeadlinesClick={handleDeadlinesClick} />
                 )}
 
                 {activeTab === 'search' && !selectedOpportunity && (
@@ -151,6 +185,10 @@ const App = () => {
                       setVerificationFilter={setVerificationFilter}
                       activeRegion={activeRegion}
                       setActiveRegion={setActiveRegion}
+                      filterExpiring={filterExpiring}
+                      setFilterExpiring={setFilterExpiring}
+                      deadlineFilter={deadlineFilter}
+                      setDeadlineFilter={setDeadlineFilter}
                     />
                     <OpportunityMatrix
                       opportunities={filteredOpportunities}

@@ -6,8 +6,11 @@ import {
 } from 'lucide-react';
 import { DATABASE_SOURCE } from '../data/opportunities';
 
-const StatCard = ({ icon: Icon, label, value, color, subValue, trend }) => (
-  <div className="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
+const StatCard = ({ icon: Icon, label, value, color, subValue, trend, onClick }) => (
+  <div
+    onClick={onClick}
+    className={`bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden relative ${onClick ? 'cursor-pointer hover:border-rose-300 hover:ring-2 hover:ring-rose-100' : ''}`}
+  >
     <div className={`absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700 ${color.replace('bg-', 'text-')}`}>
       <Icon size={120} />
     </div>
@@ -29,7 +32,7 @@ const StatCard = ({ icon: Icon, label, value, color, subValue, trend }) => (
   </div>
 );
 
-const Dashboard = ({ onSelectDeal }) => {
+const Dashboard = ({ onSelectDeal, onDeadlinesClick }) => {
   const totalDeals = DATABASE_SOURCE.length;
   const expiringSoon = DATABASE_SOURCE.filter(d => d.isExpiring).length;
   const topTargets = DATABASE_SOURCE.filter(d => d.matchScore >= 98).length;
@@ -48,9 +51,10 @@ const Dashboard = ({ onSelectDeal }) => {
           icon={ShieldCheck} label="Intelligence Pool" value={totalDeals} 
           color="bg-emerald-500" subValue="Institutional Scale Portals" trend="+12% WoW"
         />
-        <StatCard 
-          icon={AlertCircle} label="Active Deadlines" value={expiringSoon} 
+        <StatCard
+          icon={AlertCircle} label="Active Deadlines" value={expiringSoon}
           color="bg-rose-500" subValue="High Priority Action Items"
+          onClick={onDeadlinesClick}
         />
         <StatCard 
           icon={Award} label="Strategic Alignments" value={topTargets} 
